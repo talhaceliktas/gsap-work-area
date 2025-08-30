@@ -1,0 +1,10 @@
+[
+  {
+    "label": "Bubble Effect",
+    "path": "bubble-effect"
+  },
+  {
+    "label": "Stagger Loading",
+    "path": "stagger-loading"
+  }
+]

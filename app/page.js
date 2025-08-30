@@ -1,15 +1,9 @@
 import Link from "next/link";
-
-const paths = [
-  {
-    label: "Bubble Effect",
-    path: "bubble-effect",
-  },
-];
+import paths from "./paths.json";
 
 export default function Home() {
   return (
-    <div>
+    <div className="grid grid-cols-4">
       {paths.map((p) => (
         <Link href={p.path} key={p.label}>
           {p.label}

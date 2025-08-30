@@ -1,6 +1,7 @@
 import gsap from "gsap";
 import "./globals.css";
 import { useGSAP } from "@gsap/react";
+import Link from "next/link";
 
 export const metadata = {
   title: "Create Next App",
@@ -14,6 +15,9 @@ export default function RootLayout({ children }) {
     <html lang="en" className="tc-new-price">
       <body className={`antialiased`}>
         <main className="h-screen w-screen flex justify-center items-center">
+          <Link href="/" className="fixed top-5 left-5">
+            Return Home
+          </Link>
           {children}
         </main>
       </body>
