@@ -7,6 +7,7 @@ import React, { useRef, useState } from "react";
 const Page = () => {
   const [from, setFrom] = useState("start");
   const [time, setTime] = useState(1);
+  const [axis, setAxis] = useState(null);
 
   const tweenRef = useRef();
 
@@ -15,18 +16,19 @@ const Page = () => {
       width: "36px",
       height: "36px",
       stagger: {
-        grid: [5, 5],
+        grid: [5, 10],
         from: from,
         amount: time,
+        axis: axis,
       },
       paused: true,
     });
-  }, [from, time]);
+  }, [from, time, axis]);
 
   return (
     <div>
-      <div className="grid  grid-cols-5 w-[800px] h-[500px] grid-rows-5">
-        {Array.from({ length: 25 }, (_, i) => (
+      <div className="grid gap-3 grid-cols-10 w-[800px] h-[500px] grid-rows-5">
+        {Array.from({ length: 50 }, (_, i) => (
           <div
             className="bg-blue-400 w-20 h-20 self-center justify-self-center box"
             key={i + 1}
@@ -63,6 +65,20 @@ const Page = () => {
           <option>1</option>
           <option>2</option>
           <option>5</option>
+        </select>
+      </div>
+      <div className="mt-6">
+        <p>Axis</p>
+        <select
+          className="bg-yellow-100"
+          onChange={(e) =>
+            setAxis(e.target.value === "empty" ? null : e.target.value)
+          }
+          value={axis === null ? "empty" : axis}
+        >
+          <option>empty</option>
+          <option>x</option>
+          <option>y</option>
         </select>
       </div>
     </div>
