@@ -1,7 +1,9 @@
-import gsap from "gsap";
-import "./globals.css";
-import { useGSAP } from "@gsap/react";
 import Link from "next/link";
+import "./globals.css";
+
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 
 export const metadata = {
   title: "Create Next App",
@@ -9,6 +11,7 @@ export const metadata = {
 };
 
 gsap.registerPlugin(useGSAP);
+gsap.registerPlugin(MotionPathPlugin);
 
 export default function RootLayout({ children }) {
   return (

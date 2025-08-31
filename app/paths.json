@@ -6,5 +6,9 @@
   {
     "label": "Stagger Loading",
     "path": "stagger-loading"
+  },
+  {
+    "label": "Timeliner",
+    "path": "timeliner"
   }
 ]
