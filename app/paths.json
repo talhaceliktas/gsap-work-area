@@ -10,5 +10,9 @@
   {
     "label": "Timeliner",
     "path": "timeliner"
+  },
+  {
+    "label": "Scroll Animation",
+    "path": "scroll-animation"
   }
 ]

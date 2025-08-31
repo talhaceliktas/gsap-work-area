@@ -22,7 +22,6 @@ const Page = () => {
           duration: 3,
         }
       )
-      .add("test")
       .to("#kid", {
         duration: 2,
         ease: "power1.inOut",
@@ -59,7 +58,6 @@ const Page = () => {
       .to("#sun", { opacity: 0, duration: 1 })
       .to("#moon", { opacity: 1, duration: 1 })
       .to("#background", { backgroundColor: "blue", duration: 1 }, "-=1");
-    timeline.play("test");
   });
 
   return (

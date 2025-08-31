@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="tc-new-price">
       <body className={`antialiased`}>
-        <main className="h-screen w-screen flex justify-center items-center">
+        <main className="h-screen flex justify-center items-center">
           <Link href="/" className="fixed top-5 left-5">
             Return Home
           </Link>
