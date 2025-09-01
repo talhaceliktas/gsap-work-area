@@ -2,10 +2,11 @@
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { GSDevTools } from "gsap/GSDevTools";
 
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 
-gsap.registerPlugin(MotionPathPlugin);
+gsap.registerPlugin(MotionPathPlugin, GSDevTools);
 
 /* eslint-disable @next/next/no-img-element */
 const Page = () => {
@@ -24,32 +25,29 @@ const Page = () => {
       )
       .to("#kid", {
         duration: 2,
-        ease: "power1.inOut",
         motionPath: {
-          path: "m0,0 c-125,-120 -40,-145 0,-120", // relative path
-          align: "#plane", // path’i hangi elemana göre hizalayacağı
-          alignOrigin: [0.5, 0.5],
-          autoRotate: true,
-          start: "current", // #kid’in mevcut pozisyonunu başlangıç noktası yap
+          path: ".kidToPlaneLine",
+          align: ".kidToPlaneLine",
+          alignOrigin: [0.5, 1],
         },
       })
-      .to("#kid", {
+      .to("#plane", {
         duration: 3,
         motionPath: {
-          path: "m-325.2 0c255.6 16.8 277.2-174 304.8-286.8l68.4-362.4",
-          align: "#plane",
+          path: ".planeRote",
+          align: ".planeRote",
           alignOrigin: [0.5, 0.5],
           autoRotate: true,
         },
       })
       .to(
-        "#plane",
+        "#kid",
         {
           duration: 3,
           motionPath: {
-            path: "m-325.2 0c255.6 16.8 277.2-174 304.8-286.8l68.4-362.4",
-            align: "#kid",
-            alignOrigin: [0.5, 0.5],
+            path: ".planeRote",
+            align: ".planeRote",
+            alignOrigin: [0.5, 1],
             autoRotate: true,
           },
         },
@@ -58,10 +56,15 @@ const Page = () => {
       .to("#sun", { opacity: 0, duration: 1 })
       .to("#moon", { opacity: 1, duration: 1 })
       .to("#background", { backgroundColor: "blue", duration: 1 }, "-=1");
+
+    GSDevTools.create({ animation: timeline });
   });
 
   return (
-    <div className="bg-yellow-200 w-full h-full" id="background">
+    <div
+      className="bg-yellow-200 w-full min-h-screen relative overflow-hidden"
+      id="background"
+    >
       <img
         src="grass.svg"
         alt="grass svg"
@@ -79,7 +82,7 @@ const Page = () => {
         src="plane.svg"
         alt="plane svg"
         id="plane"
-        className="absolute w-[450px] scale-x-[-1] top-[450px] left-[500px]"
+        className="absolute w-[450px] top-[450px] left-[500px]"
       ></img>
       <img
         src="moon.svg"
@@ -87,6 +90,23 @@ const Page = () => {
         id="moon"
         className="fixed top-8 right-8 w-40 opacity-0"
       ></img>
+
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1800 880"
+        className="absolute top-0 left-0 w-full h-fit pointer-events-none"
+        preserveAspectRatio="xMidYMid meet"
+      >
+        <path
+          className="kidToPlaneLine invisible"
+          d="M 400 725 q-3-11 10.2-64.8t80.8-88.6q46.8-15.6 127 2.4t78 18"
+        />
+
+        <path
+          className="planeRote invisible"
+          d="m700 645 508-232c156-72 284-260 260-885"
+        />
+      </svg>
     </div>
   );
 };
