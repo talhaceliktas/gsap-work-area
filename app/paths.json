@@ -14,5 +14,9 @@
   {
     "label": "Scroll Animation",
     "path": "scroll-animation"
+  },
+  {
+    "label": "Split Scroll Text",
+    "path": "split-scroll-text"
   }
 ]
