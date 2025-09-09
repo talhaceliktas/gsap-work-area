@@ -61,12 +61,11 @@ const Page = () => {
   });
 
   return (
-    <>
-      <h2 className="fixed text-amber-50 top-20 right-5 text-2xl">
+    <div className="h-screen w-full">
+      <h2 className="fixed text-amber-50 top-20 right-5 text-2xl ">
         Scroll to see animation
       </h2>
-      <div className="bg-black overflow-x-hidden mt-20">
-        <h2 className="mb-32 text-9xl text-amber-50">Tedst</h2>
+      <div className="bg-black overflow-x-hidden ">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 1700 1000"
@@ -135,7 +134,7 @@ const Page = () => {
           </text>
         </svg>
       </div>
-    </>
+    </div>
   );
 };
 

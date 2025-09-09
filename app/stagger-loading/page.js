@@ -33,7 +33,7 @@ const Page = () => {
   }, [from, time, axis, ease]);
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center h-screen justify-center">
       <div className="grid gap-3 grid-cols-10 w-[800px] h-[500px] grid-rows-5">
         {Array.from({ length: 50 }, (_, i) => (
           <div

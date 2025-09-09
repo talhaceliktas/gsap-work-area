@@ -18,5 +18,9 @@
   {
     "label": "Split Scroll Text",
     "path": "split-scroll-text"
+  },
+  {
+    "label": "Scroll Trigger 1",
+    "path": "scroll-trigger-1"
   }
 ]

@@ -27,7 +27,7 @@ const Page = () => {
   });
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center h-screen justify-center">
       <img
         ref={container}
         src="https://www.iconpacks.net/icons/2/free-ball-icon-1793-thumb.png"
